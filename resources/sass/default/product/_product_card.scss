@@ -146,11 +146,11 @@
 
     .content {
 
-      .ui.slide.masked.reveal.image > .visible.content {
+      .ui.slide.masked.reveal.image>.visible.content {
         transform: translateX(-100%) !important;
       }
 
-      .ui.slide.masked.reveal.image > .hidden.content {
+      .ui.slide.masked.reveal.image>.hidden.content {
         transform: translateX(0) !important;
       }
     }
@@ -208,13 +208,123 @@
   }
 }
 
-.ui.three.doubling.cards > .card,
-.ui.four.doubling.cards > .card,
-.ui.five.doubling.cards > .card,
-.ui.six.doubling.cards > .card {
+.ui.three.doubling.cards>.card,
+.ui.four.doubling.cards>.card,
+.ui.five.doubling.cards>.card,
+.ui.six.doubling.cards>.card {
   @media screen and (max-width: $mobile-bp) {
-    width: calc( 100% - 2em);
+    width: calc(100% - 2em);
     margin-left: 1em;
     margin-right: 1em;
+  }
+}
+
+
+.ui.cards .product {
+
+  &__card {
+    box-shadow: none;
+
+    .content {
+      position: relative;
+      padding-top: 0;
+      padding-bottom: 0;
+      flex-grow: 0;
+
+    }
+
+    &:hover {
+      .product__buttons {
+        opacity: 1;
+      }
+
+      border: 1px solid #f6f6f6;
+      box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.07);
+    }
+  }
+
+  &__buttons {
+    position: absolute;
+    display: inline-flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s;
+
+    &__item {
+      width: 45px;
+      height: 45px;
+      border-radius: 4px;
+      background-color: rgba(255, 255, 255, 0.7);
+      margin: 0 5px;
+      transition: background-color 0.2s;
+
+      &>* {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+      }
+
+      .icon {
+        color: #1bb5ac;
+        margin: 0;
+        font-size: 19px;
+        transition: color 0.2s;
+      }
+
+      &:hover {
+        background-color: #d46da2;
+
+        .icon {
+          color: #fbf0f6;
+        }
+      }
+    }
+  }
+
+  &__name {
+    color: #4d4d4d;
+    font-size: 13px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 8px 0 10px;
+    border-bottom: 1px solid #f3f3f3;
+    margin-bottom: 12px;
+  }
+
+  &__precoBase {
+    color: #919191;
+    text-decoration: line-through;
+    font-style: italic;
+    font-size: 12px;
+  }
+
+  &__preco {
+    color: #ecb2cd;
+    font-weight: 900;
+    font-size: 16px;
+    display: inline-block;
+    margin-left: 4px;
+  }
+
+  &__discount {
+    background-color: #d8222e;
+    display: inline-block;
+    padding: 5px 6px;
+    font-weight: 900;
+    color: white;
+    font-size: 14px;
+    border-radius: 3px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    z-index: 2;
   }
 }

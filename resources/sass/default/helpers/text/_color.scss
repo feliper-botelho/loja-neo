@@ -1,6 +1,9 @@
+.color-primary {
+  color: $primary-color !important;
+}
+
 .text {
   &.color {
-
     &.white {
       color: $white !important;
     }

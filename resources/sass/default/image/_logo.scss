@@ -1,0 +1,7 @@
+.image.logo {
+    transition: max-height 0.3s;
+}
+
+.fixed .image.logo {
+    max-height: 70px;
+}
