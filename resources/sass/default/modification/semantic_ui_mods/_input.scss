@@ -1,0 +1,35 @@
+.ui.fluid.input {
+  width: 100% !important;
+
+  input {
+    width: 100% !important;
+  }
+
+  &.search-field {
+    width: 200px !important;
+    display: inline-flex;
+    transition: all 0.4s;
+
+    input {
+      width: 100% !important;
+      flex: 1;
+    }
+  }
+}
+
+.ui.category.search.focus {
+  .ui.fluid.input {
+    &.search-field {
+      width: 100% !important;
+      display: inline-flex;
+      transition: all 0.4s;
+
+      input {
+        width: 100% !important;
+        flex: 1;
+        box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(34, 36, 38, 0.15) !important;
+      }
+    }
+  }
+}
